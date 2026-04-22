@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+screenshots/
+tmp_ollama_payload.json
+.env
+config.json

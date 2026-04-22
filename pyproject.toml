@@ -1,0 +1,20 @@
+[project]
+name = "agent-capabilities"
+version = "1.0.0"
+description = "Vision, browser automation, and desktop control tools for local LLMs — runs entirely on your device"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.29.0",
+    "httpx>=0.27.0",
+    "playwright>=1.43.0",
+    "pyautogui>=0.9.54",
+    "Pillow>=10.3.0",
+    "pydantic>=2.7.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.2.0", "pytest-asyncio>=0.23.0"]
+
+[project.scripts]
+agent-capabilities = "server:main"
