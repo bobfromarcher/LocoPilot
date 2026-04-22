@@ -1,0 +1,44 @@
+---
+name: Bug report
+about: Report an issue with an endpoint or feature
+title: "[BUG] "
+labels: bug
+body:
+  - type: input
+    id: endpoint
+    attributes:
+      label: Endpoint
+      description: Which endpoint is affected?
+      placeholder: "/vision/analyze"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the issue and what you expected to happen
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: Request payload
+      description: The JSON body you sent
+      render: json
+  - type: textarea
+    id: response
+    attributes:
+      label: Response
+      description: The response you received
+      render: json
+  - type: input
+    id: model
+    attributes:
+      label: Vision model
+      description: Which Ollama vision model are you using?
+      placeholder: "moondream"
+  - type: input
+    id: os
+    attributes:
+      label: OS
+      placeholder: "Windows 11 / Ubuntu 22.04 / macOS 14"
