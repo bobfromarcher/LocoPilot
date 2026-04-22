@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ Agent Capabilities
+# ⚡ LocoPilot
 
 **Vision • Browser • Desktop — for any local LLM**
 
@@ -21,7 +21,7 @@
 
 ## What is this?
 
-Agent Capabilities gives **any local LLM** the ability to see, browse, and control — running entirely on your device with zero cloud dependencies.
+LocoPilot gives **any local LLM** the ability to see, browse, and control — running entirely on your device with zero cloud dependencies.
 
 | Module | What it does | How |
 |---|---|---|
@@ -484,7 +484,7 @@ def agent_loop(task, max_steps=10):
         response = call_your_llm(messages, tools=tools)
 
         if response.get("tool_call"):
-            # Execute the tool via Agent Capabilities
+             # Execute the tool via LocoPilot
             result = httpx.post(
                 f"http://127.0.0.1:8264{response['tool_call']['path']}",
                 json=response['tool_call']['args'],
@@ -558,6 +558,6 @@ MIT — use it, fork it, ship it.
 
 **Built by [bobfromarcher](https://github.com/bobfromarcher)**
 
-[⬆ Back to Top](#-agent-capabilities)
+[⬆ Back to Top](#-locopilot)
 
 </div>

@@ -6,7 +6,7 @@ PORT="${2:-8264}"
 
 echo ""
 echo "========================================"
-echo "  Agent Capabilities - Setup"
+echo "  LocoPilot - Setup"
 echo "========================================"
 echo ""
 

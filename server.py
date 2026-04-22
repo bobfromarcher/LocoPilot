@@ -1,5 +1,5 @@
 """
-Agent Capabilities — Local vision, browser, and desktop control for any LLM.
+LocoPilot — Local vision, browser, and desktop control for any LLM.
 One file. Zero cloud. Runs on your machine.
 
 Usage:
@@ -539,7 +539,7 @@ class BrowsePdfReq(BaseModel):
 # ── FastAPI App ─────────────────────────────────────────────────────────────
 
 app = FastAPI(
-    title="Agent Capabilities",
+    title="LocoPilot",
     version="1.1.0",
     description="Local vision, browser, and desktop control for any LLM. 35 endpoints across vision, browser, and desktop — all running on your device.",
 )
@@ -784,14 +784,14 @@ def api_mouse():
 
 if __name__ == "__main__":
     import uvicorn
-    parser = argparse.ArgumentParser(description="Agent Capabilities — Local vision, browser, and desktop control for any LLM")
+    parser = argparse.ArgumentParser(description="LocoPilot — Local vision, browser, and desktop control for any LLM")
     parser.add_argument("--host", default=DEFAULT_HOST)
     parser.add_argument("--port", type=int, default=DEFAULT_PORT)
     parser.add_argument("--model", default=DEFAULT_MODEL, help="Ollama vision model (default: moondream)")
     args = parser.parse_args()
     VISION_MODEL = args.model
     print(f"""
-  Agent Capabilities v1.1.0
+  LocoPilot v1.1.0
   Vision + Browser + Desktop
 
   Server:  http://{args.host}:{args.port}

@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Documentation
-    url: https://github.com/bobfromarcher/agent-capabilities#readme
+    url: https://github.com/bobfromarcher/LocoPilot#readme
     about: Full API reference and use case examples in the README
   - name: Discussions
-    url: https://github.com/bobfromarcher/agent-capabilities/discussions
-    about: Ask questions and share how you use Agent Capabilities
+    url: https://github.com/bobfromarcher/LocoPilot/discussions
+    about: Ask questions and share how you use LocoPilot

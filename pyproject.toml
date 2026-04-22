@@ -1,5 +1,5 @@
 [project]
-name = "agent-capabilities"
+name = "locopilot"
 version = "1.0.0"
 description = "Vision, browser automation, and desktop control tools for local LLMs — runs entirely on your device"
 requires-python = ">=3.10"
