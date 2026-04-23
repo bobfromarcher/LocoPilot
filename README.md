@@ -554,6 +554,12 @@ MIT — use it, fork it, ship it.
 
 ---
 
+## 🏗️ Used In Production
+
+LocoPilot's vision technology powers the COI image scanning in [**TachyonTracker**](https://tachyontracker.com) — an AI-powered contractor compliance platform by [de Montfort LLC](https://github.com/bobfromarcher) that verifies certificates of insurance, tracks policy expirations, and identifies compliance gaps for construction, oil & gas, and property management companies.
+
+---
+
 <div align="center">
 
 **Built by [bobfromarcher](https://github.com/bobfromarcher)**
