@@ -1,6 +1,6 @@
 [project]
 name = "locopilot"
-version = "1.0.0"
+version = "1.1.0"
 description = "Vision, browser automation, and desktop control tools for local LLMs — runs entirely on your device"
 requires-python = ">=3.10"
 dependencies = [

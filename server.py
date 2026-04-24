@@ -581,7 +581,7 @@ def list_tools():
             {"name": "go_forward", "path": "/browser/go_forward", "method": "POST", "desc": "Navigate forward in browser history"},
             {"name": "select_option", "path": "/browser/select_option", "method": "POST", "desc": "Select a dropdown option by value"},
             {"name": "wait_for", "path": "/browser/wait_for", "method": "POST", "desc": "Wait for an element to appear on the page"},
-            {"name": "cookies", "path": "/browser/cookies", "method": "GET", "desc": "Get all browser cookies"},
+            {"name": "cookies", "path": "/browser/cookies", "method": "POST", "desc": "Get all browser cookies"},
             {"name": "save_pdf", "path": "/browser/save_pdf", "method": "POST", "desc": "Save the current page as a PDF"},
             {"name": "close", "path": "/browser/close", "method": "POST", "desc": "Close the browser instance"},
             {"name": "browse_and_read", "path": "/browser/browse_and_read", "method": "POST", "desc": "Navigate + screenshot + vision + text extraction in one call"},
@@ -774,10 +774,13 @@ def api_dscreenshot(req: DScreenshotReq):
 
 @app.get("/desktop/mouse_position")
 def api_mouse():
-    import pyautogui
-    x, y = pyautogui.position()
-    w, h = pyautogui.size()
-    return {"x": x, "y": y, "screen": [w, h]}
+    try:
+        import pyautogui
+        x, y = pyautogui.position()
+        w, h = pyautogui.size()
+        return {"x": x, "y": y, "screen": [w, h]}
+    except Exception as e:
+        return {"error": str(e)}
 
 
 # ── Main ────────────────────────────────────────────────────────────────────

@@ -2,20 +2,40 @@
 
 # ⚡ LocoPilot
 
-**Vision • Browser • Desktop — for any local LLM**
+**Give any local LLM eyes, a browser, and a mouse.**
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org)
+Vision • Browser Automation • Desktop Control — 35 endpoints, zero cloud, one file.
+
+[![GitHub stars](https://img.shields.io/github/stars/bobfromarcher/LocoPilot?style=social)](https://github.com/bobfromarcher/LocoPilot/stargazers)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Ollama](https://img.shields.io/badge/runtime-Ollama-purple?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIi8+PC9zdmc+)](https://ollama.ai)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org)
+[![Endpoints](https://img.shields.io/badge/endpoints-35-orange)](http://127.0.0.1:8264/docs)
+[![Ollama](https://img.shields.io/badge/runtime-Ollama-purple)](https://ollama.ai)
 [![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![35 Endpoints](https://img.shields.io/badge/endpoints-35-orange)](http://127.0.0.1:8264/docs)
-[![Tested](https://img.shields.io/badge/status-tested-brightgreen)](http://127.0.0.1:8264/docs)
 
-*One file. Zero cloud. Full autonomy on your machine.*
-
-[Get Started](#-quickstart) · [Full Capabilities](#-full-capabilities) · [Use Cases](#-use-case-scenarios) · [API Reference](#-api-reference) · [Models](#-vision-models)
+[Quickstart](#-quickstart) · [Features](#-full-capabilities) · [Use Cases](#-use-case-scenarios) · [Comparison](#-how-it-compares) · [API Docs](http://127.0.0.1:8264/docs)
 
 </div>
+
+---
+
+## 🔄 How It Compares
+
+| Feature | LocoPilot | Cursor | Continue | Aider | Open Interpreter |
+|---------|-----------|--------|----------|-------|-----------------|
+| **Local-first (no cloud)** | ✅ Full | ❌ Cloud | ✅ Partial | ✅ Yes | ✅ Partial |
+| **Vision / OCR** | ✅ 4 endpoints | ❌ | ❌ | ❌ | ⚠️ Basic |
+| **Browser automation** | ✅ 16 endpoints | ❌ | ❌ | ❌ | ⚠️ Limited |
+| **Desktop control** | ✅ 13 endpoints | ❌ | ❌ | ❌ | ⚠️ Limited |
+| **Zero API keys** | ✅ | ❌ | ⚠️ | ✅ | ⚠️ |
+| **Agent loop built-in** | ✅ See→Think→Act | ❌ | ❌ | ❌ | ⚠️ |
+| **Single file deploy** | ✅ server.py | ❌ | ❌ | ❌ | ❌ |
+| **Model agnostic** | ✅ Any Ollama model | ❌ | ✅ | ✅ | ✅ |
+| **Self-hosted API** | ✅ REST / FastAPI | ❌ | ❌ | ❌ | ❌ |
+| **Open source** | ✅ MIT | ❌ | ✅ Apache | ✅ Apache | ✅ MIT |
+| **No telemetry** | ✅ | ❌ | ⚠️ | ✅ | ⚠️ |
+
+> LocoPilot isn't an IDE plugin or a chat wrapper — it's an **autonomy API**. If you want your LLM to actually *do things* (see screens, browse websites, control the desktop), nothing else does this locally.
 
 ---
 
@@ -37,27 +57,20 @@ The killer feature: **vision-guided autonomy**. Your LLM doesn't just call tools
 
 ## 🚀 Quickstart
 
+**One-liner (30 seconds):**
 ```bash
-# 1. Install dependencies
-pip install fastapi uvicorn httpx pyautogui Pillow pydantic playwright
-playwright install chromium
-
-# 2. Install a vision model (pick one)
-ollama pull moondream     # 1.7 GB — fast, works on 4GB VRAM
-ollama pull llava         # 4.5 GB — better quality
-ollama pull llava-llama3  # 5.5 GB — best quality
-
-# 3. Start the server
-python server.py
+pip install fastapi uvicorn httpx pyautogui Pillow pydantic playwright && playwright install chromium && ollama pull moondream && python server.py
 ```
 
 Open `http://127.0.0.1:8264/docs` for interactive API docs.
 
-**Windows one-liner:**
+**Full install by platform:**
+
+**Windows:**
 ```powershell
 ./setup.ps1
 ```
-**Linux/macOS one-liner:**
+**Linux/macOS:**
 ```bash
 ./setup.sh
 ```
@@ -548,22 +561,44 @@ def browse_and_read(url: str) -> str:
 
 ---
 
+## 🤝 Contributing
+
+We welcome contributions! LocoPilot is a single-file project, which makes it easy to understand and modify.
+
+**Quickstart:**
+1. Fork the repo
+2. Create a feature branch: `git checkout -b feature/my-feature`
+3. Add your endpoint or improvement to `server.py`
+4. Test it: `python server.py` → verify at http://127.0.0.1:8264/docs
+5. Submit a PR
+
+**What we need:**
+- 🐛 Bug fixes — check [good first issues](https://github.com/bobfromarcher/LocoPilot/labels/good%20first%20issue)
+- 🔌 New endpoints — audio control, file operations, clipboard access
+- 📖 Documentation improvements
+- 🧪 Test coverage
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for full guidelines.
+
+---
+
 ## 📄 License
 
 MIT — use it, fork it, ship it.
 
 ---
 
-## 🏗️ Used In Production
-
-LocoPilot's vision technology powers the COI image scanning in [**TachyonTracker**](https://tachyontracker.com) — an AI-powered contractor compliance platform by [de Montfort LLC](https://github.com/bobfromarcher) that verifies certificates of insurance, tracks policy expirations, and identifies compliance gaps for construction, oil & gas, and property management companies.
-
----
-
 <div align="center">
 
-**Built by [bobfromarcher](https://github.com/bobfromarcher)**
+### 🏢 From de Montfort LLC
 
-[⬆ Back to Top](#-locopilot)
+LocoPilot's vision engine is production-proven in:
+
+[**🔍 COI Validator**](https://coivalidator.com) — Automated certificate of insurance scanning API  
+[**⚡ TachyonTracker**](https://tachyontracker.com) — AI contractor compliance tracking
+
+Need AI-powered COI verification for your business? [Learn more →](https://tachyontracker.com)
+
+[⭐ Star this repo](https://github.com/bobfromarcher/LocoPilot/stargazers) · [🐛 Report a bug](https://github.com/bobfromarcher/LocoPilot/issues) · [💬 Discuss](https://github.com/bobfromarcher/LocoPilot/discussions)
 
 </div>
